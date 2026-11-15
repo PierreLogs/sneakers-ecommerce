@@ -1,3 +1,11 @@
+# Environment variables
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Temporary files
 *.tmp
+
+# Local configuration
 config.bat
-node_modules
