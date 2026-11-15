@@ -44,65 +44,64 @@
 
                     <!--Miniaturas-->
                     <div class="product__thumbnails">
-                        <a href="#" onmouseover="showData(1)">
-                            <img src="./assets/thumbnails/image-product-1-thumbnail.jpg" alt="" width="110" class="image__next">
-                        </a>
-
-                        <a href="#" onmouseover="showData(2)">
-                            <img src="./assets/thumbnails/image-product-2-thumbnail.jpg" alt="" width="110" class="image__next">
-                        </a>
-
-                        <a href="#" onmouseover="showData(3)">
-                            <img src="./assets/thumbnails/image-product-3-thumbnail.jpg" alt="" width="110" class="image__next">
-                        </a>
-
-                        <a href="#" onmouseover="showData(4)">
-                            <img src="./assets/thumbnails/image-product-4-thumbnail.jpg" alt="" width="110" class="image__next">
-                        </a>
+                        <button class="thumbnail thumbnail--active" type="button" data-image="1" aria-label="View product image" aria-pressed="true">
+                            <img src="./assets/thumbnails/image-product-1-thumbnail.jpg" alt="">
+                        </button>
+                        <button class="thumbnail" type="button" data-image="2" aria-label="View product image" aria-pressed="false">
+                            <img src="./assets/thumbnails/image-product-2-thumbnail.jpg" alt="">
+                        </button>
+                        <button class="thumbnail" type="button" data-image="3" aria-label="View product image" aria-pressed="true">
+                            <img src="./assets/thumbnails/image-product-3-thumbnail.jpg" alt="">
+                        </button>
+                        <button class="thumbnail" type="button" data-image="4" aria-label="View product image" aria-pressed="true">
+                            <img src="./assets/thumbnails/image-product-4-thumbnail.jpg" alt="">
+                        </button>
                     </div>
-
-                    <!--Información de producto-->
-                    <aside class="product__info">
-                        <p class="product__info__company">SNEAKERS COMPANY</p>
-                        <h1 class="product__info__title" id="title">Fall Limited Edition Sneakers</h1>
-                        <p class="product__info__desc" id="description">
-                            These low-profile sneakers are your perfect casual wear companion.
-                            Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
-                        </p>
-
-                        <!--Precio del producto-->
-                        <div class="product__info__price">
-                            <div class="product__info_price-current">
-                                <p class="product__info__price-value" id="price">$125.00</p>
-                                <span class="product_info__discount" id="discount">50%</span>
-                            </div>
-                            <p class="product__info__price-old" id="old_price">$250.00</p>
-                        </div>
-
-                        <!--Acción de compra-->
-                        <div class="product__info__shop">
-                            <div class="product__info__shop-counter">
-                                <button class="counter__minus" id="decrease-quantity" type="button" aria-label="Decrease quantity">
-                                    <img src="./assets/icons/icon-minus.svg" alt="minus icon">
-                                </button>
-                                <span class="counter__number" id="product-quantity">0</span>
-                                <button class="counter__plus" id="increase-quantity" type="button" aria-label="Increase quantity">
-                                    <img src="./assets/icons/icon-plus.svg" alt="plus icon">
-                                </button>
-                            </div>
-
-                            <button class="product__info__cta" id="add-to-cart" type="button">
-                                <img src="./assets/icons/icon-cart.svg" alt="cart icon" class="shop__icon">
-                                Add to cart
-                            </button>
-                        </div>
-                    </aside>
                 </div>
 
+                <!--Información de producto-->
+                <aside class="product__info">
+                    <p class="product__info__company">SNEAKERS COMPANY</p>
+                    <h1 class="product__info__title" id="title">Fall Limited Edition Sneakers</h1>
+                    <p class="product__info__desc" id="description">
+                        These low-profile sneakers are your perfect casual wear companion.
+                        Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
+                    </p>
+
+                    <!--Precio del producto-->
+                    <div class="product__info__price">
+                        <div class="product__info_price-current">
+                            <p class="product__info__price-value" id="price">$125.00</p>
+                            <span class="product_info__discount" id="discount">50%</span>
+                        </div>
+                        <p class="product__info__price-old" id="old_price">$250.00</p>
+                    </div>
+
+                    <!--Acción de compra-->
+                    <div class="product__info__shop">
+                        <div class="product__info__shop-counter">
+                            <button class="counter__minus" id="decrease-quantity" type="button" aria-label="Decrease quantity">
+                                <img src="./assets/icons/icon-minus.svg" alt="minus icon">
+                            </button>
+                            <span class="counter__number" id="product-quantity">0</span>
+                            <button class="counter__plus" id="increase-quantity" type="button" aria-label="Increase quantity">
+                                <img src="./assets/icons/icon-plus.svg" alt="plus icon">
+                            </button>
+                        </div>
+                        <button class="product__info__cta" id="add-to-cart" type="button">
+                            <img src="./assets/icons/icon-cart.svg" alt="" class="shop__icon">
+                            Add to cart
+                        </button>
+                    </div>
+                </aside>
             </section>
+
+            <!--Footer-->
             <footer class="footer">
                 <p>Developed by i202502036@cibertec.edu.pe</p>
             </footer>
+
+            <!--JavaScript-->
             <script src="./js/main.js" defer></script>
         </main>
     </body>

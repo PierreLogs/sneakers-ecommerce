@@ -1,68 +1,33 @@
-//Variables
-let img = document.getElementById('main-product-image');
-const increaseBtn = document.getElementById('increase-quantity');
-const decreaseBtn = document.getElementById('decrease-quantity');
-const addCartBtn = document.getElementById('add-to-cart');
-
-//Miniaturas
-function showData(num){
-    img.src=`./assets/images/image-product-${num}.jpg`;
-}
-
-//Producto
-const producto = {
-    id:1,
-    nombre:'Fall Limited Edition Sneakers',
-    precio:125.00,
-    stock:10,
-    cantidad: 0
-}
-
-//Carrito de compra
+"use strict";
 
 
-//Agregar al carrito
-let carrito = [];
+//1. Seleccion de elementos del DOM
 
-//Incrementar
-//increase-quantity
-increaseBtn.addEventListener("click", function(){
-    if(producto.cantidad < 10){
-        producto.cantidad++;
-    }
-    document.getElementById('product-quantity').textContent = producto.cantidad;
+const mainProductImage = document.querySelector("#main-product-image");
+const thumbnails = document.querySelectorAll(".thumbnail");
 
-})
+//2. Eventos de las miniaturas
 
-//decrease-quantity
-decreaseBtn.addEventListener("click", function(){
-    if(producto.cantidad > 0){
-        producto.cantidad--;
-    }
-    document.getElementById('product-quantity').textContent = producto.cantidad;
+//Recorre los elementos uno por uno
+thumbnails.forEach(thumbnail => {
+    //Se ejecutará 4 veces porque tenemos 4 miniaturas
+    thumbnail.addEventListener("click", () =>{
+        //Al hacer click se ejecutará la instrucción
+        const imageNumber = thumbnail.dataset.image;
+        mainProductImage.setAttribute(
+            "src",
+            `./assets/images/image-product-${imageNumber}.jpg`
+            /*Si se selecciona la etiqueta <button class="thumbnail" data-image="2">
+            * se obtendrá el siguiente string: "2" ya que estamos modificando el atributo src de la imagen
+            */
+        );
 
-})
-
-addCartBtn.addEventListener("click", function(){
-    if(producto.cantidad === 0){
-        return;
-    }
-
-    //carrito.push(producto);
-    const existe = carrito.find(item => item.id === producto.id);
-
-    if (existe){
-        if(existe.cantidad + producto.cantidad > producto.stock){
-            return;
-        }
-        existe.cantidad += producto.cantidad;
-    }else{
-        carrito.push({
-            ...producto
-        });
-    }
-
-    //console.log(carrito[0].cantidad);
-    console.log(carrito);
+        thumbnails.forEach(otherThumbnail => {
+            otherThumbnail.classList.remove("thumbnail--active");
+            otherThumbnail.setAttribute("aria-pressed","false");
+        })
+        thumbnail.classList.add("thumbnail--active");
+        thumbnail.setAttribute("aria-pressed","true");
+    });
 })
 
